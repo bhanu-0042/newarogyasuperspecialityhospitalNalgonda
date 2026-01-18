@@ -12,10 +12,6 @@ dist
 dist-ssr
 *.local
 
-node_modules
-dist
-.vite
-.env
 
 
 # Editor directories and files
@@ -28,3 +24,15 @@ dist
 *.njsproj
 *.sln
 *.sw?
+# Windows system folders
+AppData/
+Application Data/
+Local Settings/
+NTUSER.DAT*
+
+# Node & build
+node_modules/
+dist/
+.vite/
+.env
+
