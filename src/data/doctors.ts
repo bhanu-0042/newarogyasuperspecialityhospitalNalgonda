@@ -1,10 +1,12 @@
+import DrRameshImg from "@/assets/dr-ramesh.jpg";
+
 export const doctors = [
     {
         name: "Dr. R. Ramesh",
         specialty: "Critical Care & Anaesthesia",
         qualification: "MBBS, DA",
         experience: "15+ Years Experience",
-        image: ""
+        image: DrRameshImg
     },
     {
         name: "Dr. M. Jayanth Kumar",

@@ -63,8 +63,8 @@ const ServicesPage = () => {
                                     Our emergency and ambulance services are available 24 hours a day, 7 days a week. We are always here when you need us most.
                                 </p>
                                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                                    <Button size="xl" className="bg-primary hover:bg-primary/90 text-white" onClick={() => window.open('tel:+911234567890')}>
-                                        Call Now: +91 123 456 7890
+                                    <Button size="xl" className="bg-primary hover:bg-primary/90 text-white" onClick={() => window.open('tel:+918121214154')}>
+                                        Call Now: 8121214154, 9494353547
                                     </Button>
                                 </div>
                             </div>

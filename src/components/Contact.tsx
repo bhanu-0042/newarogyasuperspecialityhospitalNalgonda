@@ -26,9 +26,9 @@ const Contact = () => {
             {/* Contact Cards */}
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { icon: Phone, title: "Emergency", content: "+91 123 456 7890", subContent: "24/7 Available" },
+                { icon: Phone, title: "Emergency", content: "8121214154, 9494353547", subContent: "24/7 Available" },
                 { icon: Mail, title: "Email Us", content: "arogyahospitals25@gmail.com", subContent: "We reply within 24hrs" },
-                { icon: MapPin, title: "Location", content: "Tulsi Nagar, Nalgonda", subContent: "Telangana 508001" },
+                { icon: MapPin, title: "Location", content: "H.No. 5-2-14, GLR Enclave, Near Clock Tower, Besides Rajireddy Sir Hospital, Tulasi Nagar, Nalgonda.", subContent: "" },
                 { icon: Clock, title: "Working Hours", content: "Mon - Sat: 8AM - 8PM", subContent: "Emergency: 24/7" },
               ].map((item, index) => (
                 <div
@@ -39,7 +39,13 @@ const Contact = () => {
                     <item.icon className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <h4 className="font-semibold text-foreground mb-1">{item.title}</h4>
-                  <p className="text-foreground/80">{item.content}</p>
+                  {item.title === "Location" ? (
+                    <a href="https://www.google.com/maps/search/?api=1&query=H.No.+5-2-14,+GLR+Enclave,+Near+Clock+Tower,+Besides+Rajireddy+Sir+Hospital,+Tulasi+Nagar,+Nalgonda" target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-primary transition-colors block">
+                      {item.content}
+                    </a>
+                  ) : (
+                    <p className="text-foreground/80">{item.content}</p>
+                  )}
                   <p className="text-sm text-muted-foreground">{item.subContent}</p>
                 </div>
               ))}
@@ -50,8 +56,8 @@ const Contact = () => {
               <p className="font-medium text-foreground mb-4">Follow Us</p>
               <div className="flex gap-4">
                 {[
-                  { icon: Facebook, href: "#" },
-                  { icon: Instagram, href: "#" },
+                  { icon: Facebook, href: "https://www.facebook.com/share/18DM1DUDuA/" },
+                  { icon: Instagram, href: "https://www.instagram.com/arogyahospitalsnalgonda?igsh=MXV3MzAzendqN3hhcg==" },
                 ].map((social, index) => (
                   <a
                     key={index}
@@ -96,7 +102,7 @@ const Contact = () => {
             {/* Small Map */}
             <div className="rounded-3xl overflow-hidden shadow-elevated h-[250px] border border-border">
               <iframe
-                src="https://www.openstreetmap.org/export/embed.html?bbox=79.22%2C17.02%2C79.32%2C17.10&layer=mapnik&marker=17.06%2C79.27"
+                src="https://maps.google.com/maps?q=H.No.+5-2-14,+GLR+Enclave,+Near+Clock+Tower,+Besides+Rajireddy+Sir+Hospital,+Tulasi+Nagar,+Nalgonda&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

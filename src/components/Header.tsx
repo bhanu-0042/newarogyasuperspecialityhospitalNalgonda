@@ -47,9 +47,9 @@ const Header = () => {
         <div className="container mx-auto px-4 py-2">
           <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-primary-foreground/90">
             <div className="flex flex-wrap items-center gap-4 md:gap-6">
-              <a href="tel:+911234567890" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
+              <a href="tel:+918121214154" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
                 <Phone className="h-4 w-4" />
-                <span className="hidden sm:inline">+91 123 456 7890</span>
+                <span className="hidden sm:inline">8121214154, 9494353547</span>
               </a>
               <a href="mailto:arogyahospitals25@gmail.com" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
                 <Mail className="h-4 w-4" />
@@ -60,16 +60,16 @@ const Header = () => {
                 <span>24/7 Emergency Services</span>
               </div>
             </div>
-            <div className="flex items-center gap-2">
+            <a href="https://www.google.com/maps/search/?api=1&query=H.No.+5-2-14,+GLR+Enclave,+Near+Clock+Tower,+Besides+Rajireddy+Sir+Hospital,+Tulasi+Nagar,+Nalgonda" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 ml-auto hover:text-primary-foreground transition-colors">
               <MapPin className="h-4 w-4" />
-              <span className="hidden sm:inline">Tulsi Nagar, Nalgonda, Telangana 508001</span>
-            </div>
+              <span className="hidden sm:inline">H.No. 5-2-14, GLR Enclave, Near Clock Tower, Besides Rajireddy Sir Hospital, Tulasi Nagar, Nalgonda.</span>
+            </a>
           </div>
         </div>
       </div>
 
       {/* Main navigation */}
-      <nav className="bg-card/95 backdrop-blur-md shadow-soft">
+      <nav className="bg-card/95 backdrop-blur-md shadow-soft relative z-50">
         <div className="w-full px-4 md:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20 gap-4">
             {/* Logo - Left */}

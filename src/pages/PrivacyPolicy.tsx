@@ -112,13 +112,15 @@ const PrivacyPolicy = () => {
                                     <p className="font-bold text-xl text-foreground">Arogya Hospital</p>
                                     <div className="flex items-start gap-3 text-muted-foreground">
                                         <MapPin className="h-5 w-5 text-primary shrink-0 mt-1" />
-                                        <span>Tulsi Nagar, Nalgonda,<br />Telangana - 508001</span>
+                                        <a href="https://www.google.com/maps/search/?api=1&query=H.No.+5-2-14,+GLR+Enclave,+Near+Clock+Tower,+Besides+Rajireddy+Sir+Hospital,+Tulasi+Nagar,+Nalgonda" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                                            H.No. 5-2-14, GLR Enclave, Near Clock Tower, Besides Rajireddy Sir Hospital,<br />Tulasi Nagar, Nalgonda.
+                                        </a>
                                     </div>
                                 </div>
                                 <div className="space-y-4 pt-1">
                                     <div className="flex items-center gap-3 text-muted-foreground">
                                         <Phone className="h-5 w-5 text-primary shrink-0" />
-                                        <span>+91 91212 12541 / 42 / 43</span>
+                                        <span>8121214154, 9494353547</span>
                                     </div>
                                     <div className="flex items-center gap-3 text-muted-foreground">
                                         <Mail className="h-5 w-5 text-primary shrink-0" />

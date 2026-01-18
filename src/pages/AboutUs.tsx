@@ -26,6 +26,8 @@ const hospitalImages = [
     }
 ];
 
+import DrRameshImg from "@/assets/dr-ramesh.jpg";
+
 const AboutUs = () => {
     return (
         <div className="min-h-screen bg-background text-foreground flex flex-col">
@@ -104,8 +106,8 @@ const AboutUs = () => {
                             <div className="order-1 md:order-2 grid grid-cols-2 gap-4 animate-slide-up">
                                 <div className="space-y-4">
                                     <div className="bg-muted rounded-3xl p-6 aspect-square flex flex-col items-center justify-center text-center shadow-soft hover:shadow-elevated transition-all group">
-                                        <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                            <Users className="h-8 w-8 text-primary group-hover:text-white" />
+                                        <div className="w-20 h-20 rounded-2xl overflow-hidden mb-4 border-2 border-primary/10 group-hover:border-primary/50 transition-colors">
+                                            <img src={DrRameshImg} alt="Dr. R. Ramesh" className="w-full h-full object-cover" />
                                         </div>
                                         <h4 className="font-bold text-foreground leading-tight">Dr. R. Ramesh</h4>
                                         <p className="text-xs text-primary font-medium mt-1">CEO & Founder</p>
