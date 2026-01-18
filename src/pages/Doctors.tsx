@@ -6,7 +6,7 @@ const DoctorsPage = () => {
     return (
         <div className="min-h-screen bg-background">
             <Header />
-            <main className="pt-20">
+            <main className="pt-44">
 
 
                 {/* Use the Doctors component without limit to show all doctors */}

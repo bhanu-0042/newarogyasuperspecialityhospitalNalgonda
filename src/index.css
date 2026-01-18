@@ -174,11 +174,20 @@
   .animate-marquee-slow {
     animation: marquee 40s linear infinite;
   }
+
+  .animate-scroll-text {
+    animation: scroll-text 20s linear infinite;
+  }
 }
 
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-text {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 @keyframes marquee-reverse {

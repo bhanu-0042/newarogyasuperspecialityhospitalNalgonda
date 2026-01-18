@@ -31,7 +31,7 @@ const AboutUs = () => {
         <div className="min-h-screen bg-background text-foreground flex flex-col">
             <Navbar />
 
-            <main className="flex-grow pt-24">
+            <main className="flex-grow pt-44">
 
                 {/* Our Story - Moved Up and Reduced padding */}
                 <section className="py-12 md:py-16 bg-muted/30">

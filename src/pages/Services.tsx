@@ -9,7 +9,7 @@ const ServicesPage = () => {
     return (
         <div className="min-h-screen bg-background">
             <Header />
-            <main className="pt-20">
+            <main className="pt-44">
                 <div className="gradient-hero py-16 md:py-24 text-white">
                     <div className="container mx-auto px-4 text-center">
                         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">

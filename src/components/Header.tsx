@@ -1,8 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Phone, Mail, MapPin, Menu, X, Clock, ChevronDown } from "lucide-react";
+import { Phone, Mail, MapPin, Menu, X, Clock, ChevronDown, CheckCircle2 } from "lucide-react";
 import logo from "../assets/logo.png";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import adposter from "../assets/adposter.png";
 import { EnquiryDialog } from "./EnquiryDialog";
 import { AppointmentDialog } from "./AppointmentDialog";
 import { departments } from "@/data/departments";
@@ -185,6 +191,41 @@ const Header = () => {
           </div>
         )}
       </nav>
+
+      {/* Advertisement Ticker */}
+      {/* Advertisement Ticker */}
+      <div className="bg-[#DC143C] text-white py-2 overflow-hidden relative z-40">
+        <div className="whitespace-nowrap animate-scroll-text font-medium text-sm md:text-base flex items-center">
+          <Dialog>
+            <DialogTrigger asChild>
+              <span className="mr-32 flex items-center gap-2 cursor-pointer hover:text-white/90 transition-opacity">
+                <CheckCircle2 className="h-4 w-4 fill-white text-[#DC143C]" />
+                Master Health CheckUp Just 3000/- Only (Only This Month)
+              </span>
+            </DialogTrigger>
+            <DialogContent className="max-w-sm p-0 overflow-hidden bg-transparent border-none shadow-none">
+              <div className="relative">
+                <img
+                  src={adposter}
+                  alt="Master Health Checkup Offer"
+                  className="w-full h-auto rounded-lg shadow-2xl"
+                />
+                <button
+                  onClick={() => document.dispatchEvent(new KeyboardEvent('keydown', { 'key': 'Escape' }))}
+                  className="absolute top-2 right-2 p-1 bg-black/50 hover:bg-black/70 rounded-full text-white transition-colors"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+            </DialogContent>
+          </Dialog>
+
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="h-4 w-4 fill-white text-[#DC143C]" />
+            Expert Doctor Consultation at Just ₹200
+          </span>
+        </div>
+      </div>
     </header>
   );
 };
