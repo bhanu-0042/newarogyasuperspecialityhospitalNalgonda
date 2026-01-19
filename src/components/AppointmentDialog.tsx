@@ -123,10 +123,29 @@ export function AppointmentDialog({ trigger, open, onOpenChange }: AppointmentDi
     });
 
     function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log("Appointment Details:", values);
+        const message = ` New Appointment Request 
+-------------------------
+Patient Name:* ${values.fullName}
+Mobile:* ${values.mobileNumber}
+Department:* ${values.department}
+Doctor:* ${values.doctor || "Any Available"}
+Date:* ${values.preferredDate}
+Time:* ${values.timeSlot}
+Type:* ${values.consultationType}
+Mode:* ${values.consultationMode}
+City:* ${values.city}
+Hospital Branch:* ${values.location}
+-------------------------
+Sent from Website`;
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/918121214154?text=${encodedMessage}`;
+
+        window.open(whatsappUrl, '_blank');
+
         toast({
-            title: "Appointment Request Received",
-            description: "Your appointment request has been received. Our team will confirm shortly.",
+            title: "Redirecting to WhatsApp",
+            description: "Please send the pre-filled message to confirm your appointment.",
         });
         setIsOpen && setIsOpen(false);
         form.reset();

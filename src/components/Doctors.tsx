@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { doctors } from "@/data/doctors";
 import { User, Search, GraduationCap, Clock, Award } from "lucide-react";
-import { EnquiryDialog } from "./EnquiryDialog";
 import { AppointmentDialog } from "./AppointmentDialog";
+
 
 interface DoctorsProps {
   limit?: number;

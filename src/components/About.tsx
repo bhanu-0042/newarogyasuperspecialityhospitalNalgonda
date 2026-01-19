@@ -56,7 +56,7 @@ const About = () => {
               <div className="absolute -inset-4 bg-primary/10 rounded-[2rem] blur-2xl" />
               <div className="relative rounded-[2rem] overflow-hidden shadow-xl aspect-square">
                 <img
-                  src="/src/assets/arogya_building.jpg"
+                  src="/src/assets/hospital_building_new.jpg"
                   alt="Arogya Hospital"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

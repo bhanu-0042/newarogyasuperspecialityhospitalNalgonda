@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin, Menu, X, Clock, ChevronDown, CheckCircle2 } from "lucide-react";
-import logo from "../assets/logo.png";
+import logo from "../assets/Atitle.png";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -9,8 +9,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import adposter from "../assets/adposter.png";
-import { EnquiryDialog } from "./EnquiryDialog";
 import { AppointmentDialog } from "./AppointmentDialog";
+
 import { departments } from "@/data/departments";
 
 const Header = () => {
@@ -73,8 +73,8 @@ const Header = () => {
         <div className="w-full px-4 md:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20 gap-4">
             {/* Logo - Left */}
-            <a href="/" className="flex items-center gap-2 shrink-0 -ml-4 md:ml-0">
-              <img src={logo} alt="Healing Haven Logo" className="h-16 md:h-20 w-auto" />
+            <a href="/" className="flex items-center h-full shrink-0">
+              <img src={logo} alt="Healing Haven Logo" className="h-full w-auto object-contain" />
             </a>
 
             {/* Navigation - Center */}

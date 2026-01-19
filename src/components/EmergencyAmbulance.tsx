@@ -1,6 +1,6 @@
 import { Ambulance, Snowflake, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ambulanceImg from "@/assets/ambulance.png";
+import ambulanceImg from "@/assets/ambulance_icu.png";
 
 const EmergencyAmbulance = () => {
     return (
@@ -28,12 +28,7 @@ const EmergencyAmbulance = () => {
                                     className="w-full h-[350px] md:h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                                <div className="absolute bottom-4 left-4">
-                                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white text-sm font-bold rounded-full shadow-lg">
-                                        <Phone className="h-4 w-4" />
-                                        24/7 Available
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
 
