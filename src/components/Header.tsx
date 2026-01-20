@@ -46,28 +46,29 @@ const Header = () => {
       {/* Top bar removed */}
 
       {/* Main navigation */}
-      <nav className="bg-card/95 backdrop-blur-md shadow-soft relative z-50">
+      <nav className="bg-white/90 backdrop-blur-xl shadow-lg border-b border-white/20 relative z-50 transition-all duration-300">
         <div className="w-full px-4 md:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20 gap-4">
+          <div className="flex items-center justify-between h-20 gap-4">
             {/* Logo - Left */}
-            <a href="/" className="flex items-center h-full shrink-0">
-              <img src={logo} alt="Healing Haven Logo" className="h-full w-auto object-contain" />
+            <a href="/" className="flex items-center h-[52px] shrink-0 hover:opacity-90 transition-opacity">
+              <img src={logo} alt="Healing Haven Logo" className="h-full w-auto object-contain drop-shadow-sm" />
             </a>
 
             {/* Navigation - Center */}
-            <div className="hidden lg:flex items-center gap-6 flex-1 justify-center">
+            <div className="hidden lg:flex items-center gap-2 flex-1 justify-center">
               {navLinks.map((link) => (
                 link.isDropdown ? (
                   <div key={link.name} className="relative" ref={dropdownRef}>
                     <button
                       onClick={() => setIsSpecialitiesOpen(!isSpecialitiesOpen)}
-                      className="flex items-center gap-1 text-foreground/80 hover:text-primary font-medium transition-colors"
+                      className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${isSpecialitiesOpen ? "bg-primary/10 text-primary" : "text-gray-700 hover:bg-gray-100 hover:text-primary"
+                        }`}
                     >
-                      {link.name} <ChevronDown className={`h-4 w-4 transition-transform ${isSpecialitiesOpen ? "rotate-180" : ""}`} />
+                      {link.name} <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isSpecialitiesOpen ? "rotate-180" : ""}`} />
                     </button>
                     {isSpecialitiesOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-72 bg-card border border-border rounded-2xl shadow-elevated py-4 grid grid-cols-1 gap-1 animate-slide-up z-[60]">
-                        <div className="max-h-[60vh] overflow-y-auto px-2">
+                      <div className="absolute top-full left-0 mt-3 w-72 bg-white border border-gray-100 rounded-2xl shadow-xl py-2 grid grid-cols-1 gap-1 animate-slide-up z-[60] overflow-hidden">
+                        <div className="max-h-[60vh] overflow-y-auto px-2 py-1 scrollbar-thin scrollbar-thumb-gray-200">
                           {departments.map((dept) => (
                             <button
                               key={dept.id}
@@ -75,10 +76,12 @@ const Header = () => {
                                 navigate(`/department/${dept.id}`);
                                 setIsSpecialitiesOpen(false);
                               }}
-                              className="w-full text-left px-4 py-3 rounded-xl hover:bg-primary/10 hover:text-primary transition-all flex items-center gap-3 group"
+                              className="w-full text-left px-4 py-3 rounded-xl hover:bg-primary/5 hover:text-primary transition-all flex items-center gap-3 group"
                             >
-                              <dept.icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                              <span className="font-medium text-sm">{dept.title}</span>
+                              <div className="p-2 bg-gray-50 rounded-lg group-hover:bg-white group-hover:shadow-sm transition-all duration-300">
+                                <dept.icon className="h-5 w-5 text-gray-500 group-hover:text-primary transition-colors" />
+                              </div>
+                              <span className="font-medium text-sm text-gray-700 group-hover:text-primary">{dept.title}</span>
                             </button>
                           ))}
                         </div>
@@ -89,7 +92,7 @@ const Header = () => {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-foreground/80 hover:text-primary font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full whitespace-nowrap"
+                    className="px-4 py-2 rounded-full text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-primary transition-all duration-300"
                   >
                     {link.name}
                   </a>
@@ -100,7 +103,7 @@ const Header = () => {
             {/* CTA Button - Right */}
             <div className="hidden md:flex items-center gap-4 shrink-0">
               <AppointmentDialog trigger={
-                <Button variant="accent" size="lg">
+                <Button variant="accent" size="lg" className="rounded-full font-bold px-8 shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all hover:-translate-y-0.5">
                   Book Appointment
                 </Button>
               } />
@@ -177,7 +180,7 @@ const Header = () => {
             <DialogTrigger asChild>
               <span className="mr-32 flex items-center gap-2 cursor-pointer hover:text-white/90 transition-opacity">
                 <CheckCircle2 className="h-4 w-4 fill-white text-[#DC143C]" />
-                Master Health CheckUp Just 3000/- Only (Only This Month)
+                Master Health CheckUp Just 3000/- Only (31-01-2026)
               </span>
             </DialogTrigger>
             <DialogContent className="max-w-sm p-0 overflow-hidden bg-transparent border-none shadow-none">
