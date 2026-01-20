@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Building2, Users, Award, Clock, MapPin, Target, Eye, ShieldCheck, Heart, CheckCircle2 } from "lucide-react";
@@ -27,8 +28,21 @@ const hospitalImages = [
 ];
 
 import DrRameshImg from "@/assets/dr-ramesh.jpg";
+import equip8 from "@/assets/equip8.jpg";
+import equip10 from "@/assets/equip10.jpg";
+import equip17 from "@/assets/equip17.jpg";
 
 const AboutUs = () => {
+    const heroImages = [building, equip8, equip10, equip17];
+    const [currentHeroImage, setCurrentHeroImage] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
+        }, 3000);
+        return () => clearInterval(timer);
+    }, []);
+
     return (
         <div className="min-h-screen bg-background text-foreground flex flex-col">
             <Navbar />
@@ -42,11 +56,19 @@ const AboutUs = () => {
                             <div className="relative group">
                                 <div className="absolute -inset-4 bg-primary/10 rounded-[2rem] blur-2xl group-hover:bg-primary/20 transition-colors" />
                                 <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
-                                    <img
-                                        src={building}
-                                        alt="Arogya Hospital Building"
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                    />
+                                    {heroImages.map((img, index) => (
+                                        <div
+                                            key={index}
+                                            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentHeroImage ? "opacity-100" : "opacity-0"
+                                                }`}
+                                        >
+                                            <img
+                                                src={img}
+                                                alt={`Arogya Facility ${index + 1}`}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                             <div className="space-y-6">
@@ -138,6 +160,7 @@ const AboutUs = () => {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                     <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
                 </section>
+
 
                 {/* Vision, Mission, Values - Moved Down and Reduced padding */}
                 <section className="py-12 overflow-hidden bg-background">

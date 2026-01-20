@@ -1,6 +1,4 @@
-import { CheckCircle2, Award } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { CheckCircle2 } from "lucide-react";
 
 const features = [
   "State-of-the-art diagnostic facilities",
@@ -43,11 +41,7 @@ const About = () => {
               ))}
             </div>
 
-            <Link to="/about">
-              <Button variant="default" size="lg">
-                Learn More About Us
-              </Button>
-            </Link>
+
           </div>
 
           {/* Right Content - Small Visual */}
@@ -56,7 +50,7 @@ const About = () => {
               <div className="absolute -inset-4 bg-primary/10 rounded-[2rem] blur-2xl" />
               <div className="relative rounded-[2rem] overflow-hidden shadow-xl aspect-square">
                 <img
-                  src="/src/assets/hospital_building_new.jpg"
+                  src="/src/assets/equip8.jpg"
                   alt="Arogya Hospital"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

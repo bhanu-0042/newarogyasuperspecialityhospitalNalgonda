@@ -6,28 +6,31 @@ import { EnquiryDialog } from "./EnquiryDialog";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slideImages = departments.map(dept => dept.image);
+
+  const heroDepartments = departments.filter(
+    (dept) => !["gynaecology", "plastic-surgery"].includes(dept.id)
+  );
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slideImages.length);
+      setCurrentSlide((prev) => (prev + 1) % heroDepartments.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [slideImages.length]);
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center pt-40 md:pt-48 overflow-hidden">
       {/* Background Slider */}
       <div className="absolute inset-0 z-0">
-        {slideImages.map((img, index) => (
+        {heroDepartments.map((dept, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
           >
             <img
-              src={img}
-              alt={`Department ${index + 1}`}
+              src={dept.image}
+              alt={dept.title}
               className="w-full h-full object-cover"
             />
           </div>

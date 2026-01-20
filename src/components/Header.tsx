@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Phone, Mail, MapPin, Menu, X, Clock, ChevronDown, CheckCircle2 } from "lucide-react";
+import { Menu, X, ChevronDown, CheckCircle2 } from "lucide-react";
 import logo from "../assets/Atitle.png";
 import { Button } from "@/components/ui/button";
 import {
@@ -32,7 +32,7 @@ const Header = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/#about" },
+    { name: "About Us", href: "/about" },
     { name: "Specialities", href: "#", isDropdown: true },
     { name: "Find a Doctor", href: "/doctors" },
     { name: "Events & Campaigns", href: "/events" },
@@ -43,30 +43,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top bar */}
-      <div className="gradient-hero">
-        <div className="container mx-auto px-4 py-2">
-          <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-primary-foreground/90">
-            <div className="flex flex-wrap items-center gap-4 md:gap-6">
-              <a href="tel:+918121214154" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
-                <Phone className="h-4 w-4" />
-                <span className="hidden sm:inline">8121214154, 9494353547</span>
-              </a>
-              <a href="mailto:arogyahospitals25@gmail.com" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
-                <Mail className="h-4 w-4" />
-                <span className="hidden sm:inline">arogyahospitals25@gmail.com</span>
-              </a>
-              <div className="hidden md:flex items-center gap-2">
-                <Clock className="h-4 w-4" />
-                <span>24/7 Emergency Services</span>
-              </div>
-            </div>
-            <a href="https://www.google.com/maps/search/?api=1&query=H.No.+5-2-14,+GLR+Enclave,+Near+Clock+Tower,+Besides+Rajireddy+Sir+Hospital,+Tulasi+Nagar,+Nalgonda" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 ml-auto hover:text-primary-foreground transition-colors">
-              <MapPin className="h-4 w-4" />
-              <span className="hidden sm:inline">H.No. 5-2-14, GLR Enclave, Near Clock Tower, Besides Rajireddy Sir Hospital, Tulasi Nagar, Nalgonda.</span>
-            </a>
-          </div>
-        </div>
-      </div>
+      {/* Top bar removed */}
 
       {/* Main navigation */}
       <nav className="bg-card/95 backdrop-blur-md shadow-soft relative z-50">
