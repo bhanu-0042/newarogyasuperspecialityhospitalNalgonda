@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Newspaper, Tv, Mic2, ExternalLink, PlayCircle } from "lucide-react";
+import videoProject from "@/assets/VideoProject.mp4";
 
 const newspaperArticles = [
     {
@@ -44,6 +45,13 @@ const tvMentions = [
         source: "Metro News",
         duration: "3:45",
         thumb: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=2070"
+    },
+    {
+        title: "Hospital Tour & Facilities",
+        source: "Official Video",
+        duration: "1:20",
+        thumb: "",
+        videoSrc: videoProject
     }
 ];
 
@@ -114,21 +122,31 @@ const NewsMedia = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {tvMentions.map((video, i) => (
                                 <div key={i} className="group relative rounded-3xl overflow-hidden aspect-video shadow-lg cursor-pointer bg-muted">
-                                    <img
-                                        src={video.thumb}
-                                        alt={video.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                        loading="lazy"
-                                    />
-                                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                                        <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all">
-                                            <PlayCircle className="w-8 h-8 text-white" />
-                                        </div>
-                                    </div>
-                                    <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 to-transparent">
-                                        <span className="text-primary-foreground/70 text-[10px] font-bold block mb-1">{video.source} • {video.duration}</span>
-                                        <h3 className="text-white text-base font-serif font-bold leading-tight">{video.title}</h3>
-                                    </div>
+                                    {video.videoSrc ? (
+                                        <video
+                                            src={video.videoSrc}
+                                            className="w-full h-full object-cover"
+                                            controls
+                                        />
+                                    ) : (
+                                        <>
+                                            <img
+                                                src={video.thumb}
+                                                alt={video.title}
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                                loading="lazy"
+                                            />
+                                            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                                <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all">
+                                                    <PlayCircle className="w-8 h-8 text-white" />
+                                                </div>
+                                            </div>
+                                            <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 to-transparent">
+                                                <span className="text-primary-foreground/70 text-[10px] font-bold block mb-1">{video.source} • {video.duration}</span>
+                                                <h3 className="text-white text-base font-serif font-bold leading-tight">{video.title}</h3>
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
                             ))}
                         </div>

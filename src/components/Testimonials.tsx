@@ -4,8 +4,16 @@ import {
   Dialog,
   DialogContent,
 } from "@/components/ui/dialog";
+import videoProject from "@/assets/VideoProject.mp4";
 
 const videos = [
+  {
+    title: "Arogya Hospital Project",
+    time: "Featured Video",
+    thumb: videoProject,
+    videoUrl: videoProject,
+    isVideo: true
+  },
   {
     title: "Virtual Hospital Tour Highlight",
     time: "30 Sec Play",
@@ -66,11 +74,23 @@ const Testimonials = () => {
             >
               {videos.map((video, idx) => (
                 <div key={idx} className="min-w-full relative h-full">
-                  <img
-                    src={video.thumb}
-                    alt={video.title}
-                    className="w-full h-full object-cover"
-                  />
+                  {video.thumb?.endsWith('.mp4') || (video as any).isVideo ? (
+                    <video
+                      src={video.thumb}
+                      className="w-full h-full object-cover"
+                      muted
+                      playsInline
+                      onLoadedMetadata={(e) => {
+                        e.currentTarget.currentTime = 1;
+                      }}
+                    />
+                  ) : (
+                    <img
+                      src={video.thumb}
+                      alt={video.title}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                     <button
                       onClick={() => setActiveVideo(video)}

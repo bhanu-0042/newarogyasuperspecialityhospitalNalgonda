@@ -64,9 +64,7 @@ const Doctors = ({ limit, showViewAll = false, className, variant = "grid" }: Do
                       {doctor.name}
                     </h3>
                     <p className="text-xs text-primary font-medium mb-2">{doctor.specialty}</p>
-                    <p className="text-[10px] text-muted-foreground uppercase tracking-widest">
-                      {doctor.experience}
-                    </p>
+
                   </div>
                 </div>
               ))}
@@ -139,20 +137,13 @@ const Doctors = ({ limit, showViewAll = false, className, variant = "grid" }: Do
               </div>
 
               {/* Detailed Info */}
-              <div className="p-8 space-y-4">
+              <div className="px-8 pb-8 pt-2 space-y-4">
                 <div className="grid gap-3 p-4 rounded-2xl bg-muted/30">
                   <div className="flex items-start gap-3 text-sm">
                     <GraduationCap className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                     <div>
                       <p className="text-muted-foreground text-[10px] uppercase font-bold tracking-tighter">Qualification</p>
                       <p className="text-foreground font-medium">{doctor.qualification}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3 text-sm">
-                    <Award className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                    <div>
-                      <p className="text-muted-foreground text-[10px] uppercase font-bold tracking-tighter">Experience</p>
-                      <p className="text-foreground font-medium">{doctor.experience}</p>
                     </div>
                   </div>
                 </div>
