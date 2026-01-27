@@ -46,7 +46,7 @@ const Header = () => {
       {/* Top bar removed */}
 
       {/* Main navigation */}
-      <nav className="bg-white/90 backdrop-blur-xl shadow-lg border-b border-white/20 relative z-50 transition-all duration-300">
+      <nav className="bg-[hsl(176,52.03%,25.59%)] backdrop-blur-xl shadow-lg border-b border-white/20 relative z-50 transition-all duration-300">
         <div className="w-full px-4 md:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 gap-4">
             {/* Logo - Left */}
@@ -61,7 +61,7 @@ const Header = () => {
                   <div key={link.name} className="relative" ref={dropdownRef}>
                     <button
                       onClick={() => setIsSpecialitiesOpen(!isSpecialitiesOpen)}
-                      className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${isSpecialitiesOpen ? "bg-primary/10 text-primary" : "text-gray-700 hover:bg-gray-100 hover:text-primary"
+                      className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${isSpecialitiesOpen ? "bg-white/10 text-white" : "text-white hover:bg-white/10 hover:text-white"
                         }`}
                     >
                       {link.name} <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isSpecialitiesOpen ? "rotate-180" : ""}`} />
@@ -92,7 +92,7 @@ const Header = () => {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="px-4 py-2 rounded-full text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-primary transition-all duration-300"
+                    className="px-4 py-2 rounded-full text-sm font-semibold text-white hover:bg-white/10 hover:text-white transition-all duration-300"
                   >
                     {link.name}
                   </a>
@@ -111,7 +111,7 @@ const Header = () => {
 
             {/* Mobile menu button */}
             <button
-              className="lg:hidden p-2 text-foreground"
+              className="lg:hidden p-2 text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -174,12 +174,12 @@ const Header = () => {
 
       {/* Advertisement Ticker */}
       {/* Advertisement Ticker */}
-      <div className="bg-[#DC143C] text-white py-2 overflow-hidden relative z-40">
+      <div className="bg-[rgb(131,78,88)] text-white py-2 overflow-hidden relative z-40">
         <div className="whitespace-nowrap animate-scroll-text font-medium text-sm md:text-base flex items-center">
           <Dialog>
             <DialogTrigger asChild>
               <span className="mr-32 flex items-center gap-2 cursor-pointer hover:text-white/90 transition-opacity">
-                <CheckCircle2 className="h-4 w-4 fill-white text-[#DC143C]" />
+                <CheckCircle2 className="h-4 w-4 fill-white text-[rgb(131,78,88)]" />
                 Master Health CheckUp Just 3000/- Only (31-01-2026)
               </span>
             </DialogTrigger>
@@ -200,8 +200,37 @@ const Header = () => {
             </DialogContent>
           </Dialog>
 
-          <span className="flex items-center gap-2">
-            <CheckCircle2 className="h-4 w-4 fill-white text-[#DC143C]" />
+          <span className="mr-32 flex items-center gap-2">
+            <CheckCircle2 className="h-4 w-4 fill-white text-[rgb(131,78,88)]" />
+            Expert Doctor Consultation at Just ₹200
+          </span>
+
+          <Dialog>
+            <DialogTrigger asChild>
+              <span className="mr-32 flex items-center gap-2 cursor-pointer hover:text-white/90 transition-opacity">
+                <CheckCircle2 className="h-4 w-4 fill-white text-[rgb(131,78,88)]" />
+                Master Health CheckUp Just 3000/- Only (31-01-2026)
+              </span>
+            </DialogTrigger>
+            <DialogContent className="max-w-sm p-0 overflow-hidden bg-transparent border-none shadow-none">
+              <div className="relative">
+                <img
+                  src={adposter}
+                  alt="Master Health Checkup Offer"
+                  className="w-full h-auto rounded-lg shadow-2xl"
+                />
+                <button
+                  onClick={() => document.dispatchEvent(new KeyboardEvent('keydown', { 'key': 'Escape' }))}
+                  className="absolute top-2 right-2 p-1 bg-black/50 hover:bg-black/70 rounded-full text-white transition-colors"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+            </DialogContent>
+          </Dialog>
+
+          <span className="mr-32 flex items-center gap-2">
+            <CheckCircle2 className="h-4 w-4 fill-white text-[rgb(131,78,88)]" />
             Expert Doctor Consultation at Just ₹200
           </span>
         </div>
