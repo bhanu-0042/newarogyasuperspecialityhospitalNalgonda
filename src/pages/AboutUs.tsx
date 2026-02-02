@@ -28,6 +28,7 @@ const hospitalImages = [
 ];
 
 import DrRameshImg from "@/assets/dr-ramesh.jpg";
+import DrPhaniImg from "@/assets/phanikumar.jpeg";
 import equip8 from "@/assets/equip8.jpg";
 import equip10 from "@/assets/equip10.jpg";
 import equip17 from "@/assets/equip17.jpg";
@@ -127,7 +128,7 @@ const AboutUs = () => {
                             </div>
                             <div className="order-1 md:order-2 grid grid-cols-2 gap-4 animate-slide-up">
                                 <div className="space-y-4">
-                                    <div className="bg-muted rounded-3xl p-6 aspect-square flex flex-col items-center justify-center text-center shadow-soft hover:shadow-elevated transition-all group">
+                                    <div className="bg-muted rounded-3xl p-6 aspect-square flex flex-col items-center justify-center text-center shadow-soft hover:shadow-elevated transition-all group border-2 border-primary/10">
                                         <div className="w-20 h-20 rounded-2xl overflow-hidden mb-4 border-2 border-primary/10 group-hover:border-primary/50 transition-colors">
                                             <img src={DrRameshImg} alt="Dr. R. Ramesh" className="w-full h-full object-cover" />
                                         </div>
@@ -141,8 +142,8 @@ const AboutUs = () => {
                                 </div>
                                 <div className="space-y-4 pt-8">
                                     <div className="bg-muted rounded-3xl p-6 aspect-square flex flex-col items-center justify-center text-center shadow-soft hover:shadow-elevated transition-all group border-2 border-primary/10">
-                                        <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-colors text-accent">
-                                            <Heart className="h-8 w-8 group-hover:text-white" />
+                                        <div className="w-20 h-20 rounded-2xl overflow-hidden mb-4 border-2 border-primary/10 group-hover:border-primary/50 transition-colors">
+                                            <img src={DrPhaniImg} alt="Dr. C. Phani Kumar" className="w-full h-full object-cover" />
                                         </div>
                                         <h4 className="font-bold text-foreground leading-tight">Dr. C. Phani Kumar</h4>
                                         <p className="text-xs text-accent font-medium mt-1">Co-Founder</p>
@@ -202,7 +203,7 @@ const AboutUs = () => {
 
             </main>
             <Footer />
-        </div>
+        </div >
     );
 };
 
