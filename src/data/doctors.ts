@@ -4,6 +4,8 @@ import DrPhaniImg from "@/assets/phanikumar.jpeg";
 import DrChetanImg from "@/assets/chetandoctor.jpeg";
 import DrSridharImg from "@/assets/dr_sridhar_clean.jpg";
 import DrShyamImg from "@/assets/dr_shyam_final.jpg";
+import DrArunaImg from "@/assets/Arunadoctor.jpeg";
+import DrSrinuImg from "@/assets/srinudoctor.jpeg";
 
 export const doctors = [
     {
@@ -40,7 +42,7 @@ export const doctors = [
         name: "Dr. I. Aruna",
         specialty: "Paediatrician",
         qualification: "MBBS, DCH",
-        image: ""
+        image: DrArunaImg
     },
     {
         name: "Dr. M. Praveen",
@@ -52,7 +54,7 @@ export const doctors = [
         name: "Dr. M. Srinu",
         specialty: "Cardiologist",
         qualification: "MD, DM (Cardio)",
-        image: ""
+        image: DrSrinuImg
     },
     {
         name: "Dr. Deepak",
