@@ -6,11 +6,11 @@ const DoctorsPage = () => {
     return (
         <div className="min-h-screen bg-background">
             <Header />
-            <main className="pt-44">
+            <main className="pt-32">
 
 
                 {/* Use the Doctors component without limit to show all doctors */}
-                <Doctors className="pt-10 pb-20" />
+                <Doctors className="!pt-4 pb-20" />
             </main>
             <Footer />
         </div>
