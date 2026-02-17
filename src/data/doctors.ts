@@ -6,14 +6,17 @@ import DrSridharImg from "@/assets/dr_sridhar_clean.jpg";
 import DrShyamImg from "@/assets/dr_shyam_final.jpg";
 import DrArunaImg from "@/assets/Arunadoctor.jpeg";
 import DrSrinuImg from "@/assets/srinudoctor.jpeg";
+import DrBharadwajImg from "@/assets/bharadwajdoctor.jpeg";
 
 export const doctors = [
+
     {
         name: "Dr. R. Ramesh",
         specialty: "Critical Care & Anaesthesia",
         qualification: "MBBS, DA",
         image: DrRameshImg
     },
+
     {
         name: "Dr. M. Jayanth Kumar",
         specialty: "General Physician",
@@ -26,6 +29,7 @@ export const doctors = [
         qualification: "MBBS, MD (Gen Med), Dr NB Cardiology",
         image: DrPhaniImg
     },
+
     {
         name: "Dr. Chetan Veramaneni",
         specialty: "Nephrology",
@@ -67,5 +71,11 @@ export const doctors = [
         specialty: "Senior Orthopaedic & Spine Surgeon",
         qualification: "MBBS,DNB (Ortho),MNAMS",
         image: DrShyamImg
+    },
+    {
+        name: "Dr. B.Bharadwaj",
+        specialty: "Nephrology",
+        qualification: "DNB, DrNB Consultant Nephrologist & Transplant Physician",
+        image: DrBharadwajImg
     }
 ];
