@@ -4,7 +4,7 @@ import {
   Dialog,
   DialogContent,
 } from "@/components/ui/dialog";
-import videoProject from "@/assets/VideoProject.mp4";
+import videoProject from "@/assets/videoproject.mp4";
 
 const videos = [
   {

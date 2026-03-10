@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Newspaper, Tv, Mic2, ExternalLink, PlayCircle } from "lucide-react";
-import videoProject from "@/assets/VideoProject.mp4";
+import videoProject from "@/assets/videoproject.mp4";
 
 const newspaperArticles = [
     {
