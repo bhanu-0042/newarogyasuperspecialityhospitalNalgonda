@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Building2, Users, Award, Clock, MapPin, Target, Eye, ShieldCheck, Heart, CheckCircle2 } from "lucide-react";
-import building from "@/assets/hospital_building_new.jpg";
+import building from "@/assets/equip8.jpg";
 
 const hospitalImages = [
     {
