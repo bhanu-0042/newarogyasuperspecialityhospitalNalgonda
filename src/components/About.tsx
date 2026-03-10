@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import equip8Img from "@/assets/equip8.jpg";
 
 const features = [
   "State-of-the-art diagnostic facilities",
@@ -50,7 +51,7 @@ const About = () => {
               <div className="absolute -inset-4 bg-primary/10 rounded-[2rem] blur-2xl" />
               <div className="relative rounded-[2rem] overflow-hidden shadow-xl aspect-square">
                 <img
-                  src="/src/assets/equip8.jpg"
+                  src={equip8Img}
                   alt="Arogya Hospital"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
