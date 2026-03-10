@@ -73,7 +73,7 @@ export const doctors = [
         image: DrShyamImg
     },
     {
-        name: "Dr. B.Bharadwaj",
+        name: "Dr.B.Bharadwaj",
         specialty: "Nephrology",
         qualification: "DNB, DrNB Consultant Nephrologist & Transplant Physician",
         image: DrBharadwajImg

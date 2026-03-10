@@ -116,7 +116,7 @@ const AboutUs = () => {
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
-                            <div className="order-2 md:order-1 space-y-6 animate-slide-right">
+                            <div className="space-y-6 animate-slide-right">
                                 <h3 className="text-2xl font-serif font-bold text-primary">Why We Started</h3>
                                 <p className="text-muted-foreground leading-relaxed italic border-l-4 border-primary/20 pl-6 text-lg">
                                     "We saw families struggling during emergencies due to the lack of advanced critical care in our region. Our goal was to create a hospital that combines cutting-edge technology with the warmth of local community trust. We wanted to bring 'Metro-Standard' healthcare to Nalgonda's doorstep."
@@ -126,32 +126,23 @@ const AboutUs = () => {
                                     <span className="font-semibold text-foreground uppercase tracking-widest text-sm">Founder's Mission</span>
                                 </div>
                             </div>
-                            <div className="order-1 md:order-2 grid grid-cols-2 gap-4 animate-slide-up">
-                                <div className="space-y-4">
-                                    <div className="bg-muted rounded-3xl p-6 aspect-square flex flex-col items-center justify-center text-center shadow-soft hover:shadow-elevated transition-all group border-2 border-primary/10">
-                                        <div className="w-20 h-20 rounded-2xl overflow-hidden mb-4 border-2 border-primary/10 group-hover:border-primary/50 transition-colors">
-                                            <img src={DrRameshImg} alt="Dr. R. Ramesh" className="w-full h-full object-cover" />
-                                        </div>
-                                        <h4 className="font-bold text-foreground leading-tight">Dr. R. Ramesh</h4>
-                                        <p className="text-xs text-primary font-medium mt-1">CEO & Founder</p>
+
+                            <div className="flex justify-center md:justify-end animate-slide-up">
+                                <div className="bg-muted rounded-3xl p-8 w-72 flex flex-col items-center justify-center text-center shadow-soft hover:shadow-elevated transition-all group border-2 border-primary/10 relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+
+                                    <div className="w-28 h-28 rounded-full overflow-hidden mb-5 border-4 border-background shadow-md group-hover:scale-105 transition-transform duration-300">
+                                        <img src={DrPhaniImg} alt="Dr. C. Phani Kumar" className="w-full h-full object-cover" />
                                     </div>
-                                    <div className="bg-primary/5 rounded-3xl p-4 text-center border border-primary/10">
-                                        <p className="text-[10px] uppercase font-bold tracking-tighter text-muted-foreground">Specialty</p>
-                                        <p className="text-xs font-semibold">Critical Care & Anaesthesia</p>
-                                    </div>
-                                </div>
-                                <div className="space-y-4 pt-8">
-                                    <div className="bg-muted rounded-3xl p-6 aspect-square flex flex-col items-center justify-center text-center shadow-soft hover:shadow-elevated transition-all group border-2 border-primary/10">
-                                        <div className="w-20 h-20 rounded-2xl overflow-hidden mb-4 border-2 border-primary/10 group-hover:border-primary/50 transition-colors">
-                                            <img src={DrPhaniImg} alt="Dr. C. Phani Kumar" className="w-full h-full object-cover" />
-                                        </div>
-                                        <h4 className="font-bold text-foreground leading-tight">Dr. C. Phani Kumar</h4>
-                                        <p className="text-xs text-accent font-medium mt-1">Co-Founder</p>
-                                    </div>
-                                    <div className="bg-accent/5 rounded-3xl p-4 text-center border border-accent/10">
-                                        <p className="text-[10px] uppercase font-bold tracking-tighter text-muted-foreground">Specialty</p>
-                                        <p className="text-xs font-semibold">Physician & Cardiology</p>
-                                    </div>
+
+                                    <h4 className="font-serif font-bold text-xl text-foreground leading-tight mb-1">Dr. C. Phani Kumar</h4>
+                                    <p className="text-accent font-semibold text-sm uppercase tracking-wide mb-3">Co-Founder</p>
+
+                                    <div className="h-px w-16 bg-border mb-3" />
+
+                                    <p className="text-muted-foreground text-xs font-medium px-2">
+                                        Gen Physician & Cardiology
+                                    </p>
                                 </div>
                             </div>
                         </div>
