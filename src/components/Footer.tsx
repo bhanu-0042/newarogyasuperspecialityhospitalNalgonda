@@ -31,7 +31,8 @@ const Footer = () => {
                 { name: "Find a Doctor", href: "/doctors" },
                 { name: "Appointments", href: "/#appointment" },
                 { name: "News & Media", href: "/news-media" },
-                { name: "Contact Us", href: "/contact" }
+                { name: "Contact Us", href: "/contact" },
+                { name: "Admin Portal", href: "/admin/login" }
               ].map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className="text-primary-foreground/70 hover:text-accent transition-colors">

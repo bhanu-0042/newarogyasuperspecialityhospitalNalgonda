@@ -34,6 +34,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/components/ui/use-toast";
 import { departments } from "@/data/departments";
 import { doctors } from "@/data/doctors";
+import { submitBooking } from "@/lib/bookings";
 
 const formSchema = z.object({
     // 1. Patient Details
@@ -68,8 +69,8 @@ const formSchema = z.object({
     insuranceProvider: z.string().optional(),
 
     // 8. Consent
-    consent: z.literal(true, {
-        errorMap: () => ({ message: "You must agree to the Terms & Privacy Policy" }),
+    consent: z.boolean().refine((value) => value, {
+        message: "You must agree to the Terms & Privacy Policy",
     }),
     whatsappUpdates: z.boolean().optional(),
 });
@@ -89,6 +90,7 @@ const yesNoOptions = ["Yes", "No"];
 export function AppointmentDialog({ trigger, open, onOpenChange }: AppointmentDialogProps) {
     const { toast } = useToast();
     const [internalOpen, setInternalOpen] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const isControlled = open !== undefined;
     const isOpen = isControlled ? open : internalOpen;
@@ -116,39 +118,57 @@ export function AppointmentDialog({ trigger, open, onOpenChange }: AppointmentDi
             city: "",
             insuranceRequired: "No",
             insuranceProvider: "",
-            // @ts-ignore
             consent: false,
             whatsappUpdates: false,
         },
     });
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        const message = ` New Appointment Request 
--------------------------
-Patient Name:* ${values.fullName}
-Mobile:* ${values.mobileNumber}
-Department:* ${values.department}
-Doctor:* ${values.doctor || "Any Available"}
-Date:* ${values.preferredDate}
-Time:* ${values.timeSlot}
-Type:* ${values.consultationType}
-Mode:* ${values.consultationMode}
-City:* ${values.city}
-Hospital Branch:* ${values.location}
--------------------------
-Sent from Website`;
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        try {
+            setIsSubmitting(true);
 
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/918121214154?text=${encodedMessage}`;
+            const response = await submitBooking({
+                bookingType: "DOCTOR_APPOINTMENT",
+                sourceForm: "doctor-appointment-dialog",
+                fullName: values.fullName,
+                mobileNumber: values.mobileNumber,
+                email: values.email || undefined,
+                dob: values.dob,
+                gender: values.gender,
+                department: values.department,
+                doctor: values.doctor === "Any" ? "" : values.doctor,
+                consultationType: values.consultationType,
+                consultationMode: values.consultationMode,
+                preferredDate: values.preferredDate,
+                preferredTimeSlot: values.timeSlot,
+                alternateDate: values.alternateDate || undefined,
+                symptoms: values.symptoms || undefined,
+                existingCondition: values.existingCondition,
+                patientId: values.patientId || undefined,
+                location: values.location,
+                city: values.city,
+                insuranceRequired: values.insuranceRequired,
+                insuranceProvider: values.insuranceProvider || undefined,
+                whatsappUpdates: Boolean(values.whatsappUpdates),
+                consent: values.consent,
+                notes: values.symptoms || undefined,
+            });
 
-        window.open(whatsappUrl, '_blank');
-
-        toast({
-            title: "Redirecting to WhatsApp",
-            description: "Please send the pre-filled message to confirm your appointment.",
-        });
-        setIsOpen && setIsOpen(false);
-        form.reset();
+            toast({
+                title: "Appointment saved",
+                description: `Reference ${response.referenceCode} has been created.`,
+            });
+            setIsOpen?.(false);
+            form.reset();
+        } catch (error) {
+            toast({
+                title: "Unable to save appointment",
+                description: error instanceof Error ? error.message : "Please try again.",
+                variant: "destructive",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     }
 
     return (
@@ -158,7 +178,7 @@ Sent from Website`;
                 <DialogHeader>
                     <DialogTitle className="text-2xl font-serif text-primary">Book Appointment</DialogTitle>
                     <DialogDescription>
-                        Fill in the details to schedule your visit with our specialists.
+                        Fill in the details to save your visit directly to the Oracle booking system.
                     </DialogDescription>
                 </DialogHeader>
                 <Form {...form}>
@@ -590,8 +610,12 @@ Sent from Website`;
                         </div>
 
                         <div className="flex justify-end pt-4">
-                            <Button type="submit" className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white font-bold py-6 px-10 rounded-xl transition-all hover:scale-[1.02] shadow-lg">
-                                Book Appointment
+                            <Button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white font-bold py-6 px-10 rounded-xl transition-all hover:scale-[1.02] shadow-lg disabled:opacity-70 disabled:hover:scale-100"
+                            >
+                                {isSubmitting ? "Saving..." : "Book Appointment"}
                             </Button>
                         </div>
                     </form>

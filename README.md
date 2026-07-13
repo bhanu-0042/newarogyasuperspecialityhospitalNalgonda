@@ -60,6 +60,28 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Oracle Booking Setup
+
+The appointment and checkup forms now submit to a small Node API that writes into Oracle Database.
+
+1. Copy `.env.example` to `.env` and fill in your Oracle credentials.
+2. Create the bookings table by running `database/oracle-bookings-schema.sql` in your Oracle schema.
+3. Install dependencies with `npm install`.
+4. Start the frontend with `npm run dev` and the API with `npm run api`.
+5. For this local Oracle install, the connection string is usually `localhost:1521/ORCL`.
+6. If you want to run `sqlplus / as sysdba` on Windows, your account must be in the `ORA_DBA` group and you may need to sign out and back in after adding it.
+7. If your machine's second Oracle instance is the one you want, use `localhost:1522/orclRoo` instead.
+8. Oracle 10g is too old for node-oracledb Thin mode, so this machine can use `BOOKINGS_DB_DRIVER=jdbc` with `BOOKINGS_JDBC_DRIVER_JAR` pointing to `ojdbc14.jar`.
+9. Add `ADMIN_USERNAME`, `ADMIN_PASSWORD`, and `ADMIN_AUTH_SECRET` to `.env` to enable the protected admin bookings dashboard at `/admin/login`.
+
+The API uses node-oracledb Thin mode by default. For older local Oracle installs, set `BOOKINGS_DB_DRIVER=jdbc` so the API can save through the bundled Java JDBC helper instead.
+
+## Admin access
+
+- Sign in at `/admin/login`
+- View appointments at `/admin/bookings`
+- The bookings list is protected by a bearer token issued by the API after a successful login
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.

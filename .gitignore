@@ -35,4 +35,4 @@ node_modules/
 dist/
 .vite/
 .env
-
+server/java/bin/

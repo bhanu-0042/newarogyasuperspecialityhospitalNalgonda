@@ -143,6 +143,7 @@ const AboutUs = () => {
                                     <div className="bg-muted rounded-3xl p-6 aspect-square flex flex-col items-center justify-center text-center shadow-soft hover:shadow-elevated transition-all group border-2 border-primary/10">
                                         <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-colors text-accent">
                                             <Heart className="h-8 w-8 group-hover:text-white" />
+
                                         </div>
                                         <h4 className="font-bold text-foreground leading-tight">Dr. C. Phani Kumar</h4>
                                         <p className="text-xs text-accent font-medium mt-1">Co-Founder</p>

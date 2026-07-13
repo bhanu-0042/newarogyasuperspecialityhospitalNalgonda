@@ -95,8 +95,8 @@ const DepartmentDetail = () => {
                     </div>
                 </section>
 
-                {/* Appointment Form */}
-                <Appointment />
+                {/* Checkup Booking Form */}
+                <Appointment departmentName={department.title} />
             </main>
             <Footer />
         </div>
